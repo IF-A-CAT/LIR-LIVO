@@ -1,0 +1,42 @@
+point_filter_num : 4
+max_iteration : 10
+filter_size_surf : 0.5 # 0.3
+filter_size_map : 0.5 # 0.4
+cube_side_length : 1000 
+img_enable : 1
+reprojection_cov: 40 #10
+associated_lidar_num: 12
+frame_winsize: 3
+laser_point_cov : 0.001
+delta_time: 0.0
+
+common:
+    lid_topic:  "/livox/lidar"
+    imu_topic:  "/livox/imu"
+
+preprocess:
+    lidar_type: 1  # Ouster
+    scan_line: 6
+    blind: 0.01 # blind x m disable
+
+mapping:
+    acc_cov: 1 #1   10
+    gyr_cov: 1 #100  800
+    extrinsic_T: [ 0.04165, 0.02326, -0.0284]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+
+camera:
+    img_topic: "/camera/image_color/compressed"
+    horizontal_fov: 74 #degree
+    vertical_fov: 62 #degree
+    # R3live
+    Rcl: [-0.00113207, -0.9999999, 0.000504622,
+          -0.0158688, -0.000486594, -0.999874,
+          0.999873, -0.00113994, -0.0158682]
+    Pcl: [0.0475,  -0.0304, -0.0506]
+
+model_path: "/home/sjz/Desktop/livo_ws/src/livo_fast/models"
+
+gt_arm: [  0,0,0]

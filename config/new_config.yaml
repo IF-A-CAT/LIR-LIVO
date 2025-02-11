@@ -1,0 +1,41 @@
+point_filter_num : 4
+max_iteration : 10
+filter_size_surf : 0.5 # 0.3
+filter_size_map : 0.5 # 0.4
+cube_side_length : 1000 
+img_enable : 1
+reprojection_cov: 10 #10
+associated_lidar_num: 5
+frame_winsize: 5
+laser_point_cov : 0.001 # 0.001
+delta_time: 0.0
+
+common:
+    lid_topic:  "/livox/lidar"
+    imu_topic:  "/livox/imu"
+
+preprocess:
+    lidar_type: 1 # 1:Livox Avia LiDAR  2:VELO16  3:OUST64  4:XT32 
+    scan_line: 6 # 16  64  32
+    blind: 1 # blind x m disable
+
+mapping:
+    acc_cov: 0.1
+    gyr_cov: 0.1
+    extrinsic_T: [ 0.04165, 0.02326, -0.0284 ] # horizon 0.05512, 0.02226, -0.0297
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+
+camera:
+    img_topic: /left_camera/image
+    horizontal_fov: 72 #degree
+    vertical_fov: 64 #degree
+    Rcl: [0.00162756,-0.999991,0.00390957,
+         -0.0126748,-0.00392989,-0.999912,
+          0.999918,0.00157786,-0.012681]
+    Pcl: [0.0409257, 0.0318424, -0.0927219]
+
+model_path: "/home/sjz/Desktop/livo_ws/src/livo_fast/models"
+
+gt_arm: [  0,0,0]

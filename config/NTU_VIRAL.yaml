@@ -1,0 +1,43 @@
+point_filter_num : 4
+max_iteration : 10
+filter_size_surf : 0.5 # 0.3
+filter_size_map : 0.5 # 0.4
+cube_side_length : 1000 
+img_enable : 1
+reprojection_cov: 100 #10
+associated_lidar_num: 5
+frame_winsize: 5
+laser_point_cov : 0.001
+delta_time: -0.02
+
+common:
+    lid_topic:  "/os1_cloud_node1/points"
+    imu_topic:  "/os1_cloud_node1/imu"
+
+preprocess:
+    lidar_type: 3  # Ouster
+    scan_line: 16
+    blind: 2 # blind x m disable
+
+mapping:
+    acc_cov: 0.1 #1   10
+    gyr_cov: 0.1 #100  800
+    extrinsic_T: [ -0.050, 0.0, 0.055]
+    extrinsic_R: [ 1, 0, 0,
+                   0, 1, 0,
+                   0, 0, 1]
+
+camera:
+    img_topic: /left/image_raw 
+    horizontal_fov: 90 #degree
+    vertical_fov: 60 #degree
+    # NTU_VIRAL
+    Rcl: [0.0218308, 0.99976, -0.00201407,
+         -0.0131205, 0.00230088, 0.999911,
+          0.999676, -0.0218025, 0.0131676]
+    Pcl: [0.122993,  0.0398643, -0.0577101]
+
+model_path: "/home/sjz/Desktop/livo_ws/src/livo_fast/models"
+
+gt_arm: [  -0.293656,  -0.012288, -0.273095]
+# gt_arm: [  -0.0,  -0.0, -0.0]
