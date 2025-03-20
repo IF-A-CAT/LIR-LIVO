@@ -16,10 +16,14 @@ LIR-LIVO has been extensively evaluated on several benchmark datasets:
 - **R3LIVE-Dataset**: Includes RGB cameras, LiVOX AVIA LiDAR sensors, and internal IMU data.
 ## Requirement
 OpenCV 4.2
+
 Eigen 3
+
 TensorRT 8.6.1.6
+
 CUDA 11.1
+
 ROS noetic
 
 ## Thanks
-Gratefully acknowledge the open-source projects Fast_LIVO[https://github.com/hku-mars/FAST-LIVO] and airSLAM[https://github.com/sair-lab/AirSLAM], whose excellent work and implementations have provided valuable inspiration and reference for the development of this program.
+Gratefully acknowledge the open-source projects [Fast_LIVO](https://github.com/hku-mars/FAST-LIVO) and [AirSLAM](https://github.com/sair-lab/AirSLAM), whose excellent work and implementations have provided valuable inspiration and reference for the development of this program.
